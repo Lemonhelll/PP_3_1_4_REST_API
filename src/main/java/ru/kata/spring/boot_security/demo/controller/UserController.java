@@ -25,6 +25,6 @@ public class UserController {
     public String getUserProfile(Model model, Principal principal) {
         User user = userService.findByUsername(principal.getName());
         model.addAttribute("user", user);
-        return "user";
+        return "userPage";
     }
 }

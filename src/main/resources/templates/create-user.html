@@ -1,58 +1,58 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Create User</title>
-</head>
-<body>
+<!--<!DOCTYPE html>-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Create User</title>-->
+<!--</head>-->
+<!--<body>-->
 
-<form th:method="POST" th:action="@{/admin/create}" th:object="${user}">
+<!--<form th:method="POST" th:action="@{/admin/create}" th:object="${user}">-->
 
-    <label for="username">Enter username: </label>
-    <input type="text" th:field="*{username}" id="username"/>
+<!--    <label for="username">Enter username: </label>-->
+<!--    <input type="text" th:field="*{username}" id="username"/>-->
 
-    <br>
+<!--    <br>-->
 
-    <label for="password">Enter password: </label>
-    <input type="text" th:field="*{password}" id="password"/>
+<!--    <label for="password">Enter password: </label>-->
+<!--    <input type="text" th:field="*{password}" id="password"/>-->
 
-    <br>
+<!--    <br>-->
 
-    <label for="name">Enter name: </label>
-    <input type="text" th:field="*{name}" id="name"/>
+<!--    <label for="name">Enter name: </label>-->
+<!--    <input type="text" th:field="*{name}" id="name"/>-->
 
-    <br>
+<!--    <br>-->
 
-    <label for="surname">Enter surname: </label>
-    <input type="text" th:field="*{surname}" id="surname"/>
+<!--    <label for="surname">Enter surname: </label>-->
+<!--    <input type="text" th:field="*{surname}" id="surname"/>-->
 
-    <br>
+<!--    <br>-->
 
-    <label for="age">Enter age:</label>
-    <input type="text" th:field="*{age}" id="age"/>
+<!--    <label for="age">Enter age:</label>-->
+<!--    <input type="text" th:field="*{age}" id="age"/>-->
 
-    <br>
+<!--    <br>-->
 
-    <label for="email">Enter email:</label>
-    <input type="text" th:field="*{email}" id="email"/>
+<!--    <label for="email">Enter email:</label>-->
+<!--    <input type="text" th:field="*{email}" id="email"/>-->
 
-    <br>
+<!--    <br>-->
 
-    <p>
-        <label>Roles:
-            <input type="checkbox" id="roles"
-                   th:each="role : ${roleList}"
-                   th:text="${role.name}"
-                   th:value="${role.id}"
-                   th:field="*{roles}"
-            />
-        </label>
-    </p>
+<!--    <p>-->
+<!--        <label>Roles:-->
+<!--            <input type="checkbox" id="roles"-->
+<!--                   th:each="role : ${roleList}"-->
+<!--                   th:text="${role.name}"-->
+<!--                   th:value="${role.id}"-->
+<!--                   th:field="*{roles}"-->
+<!--            />-->
+<!--        </label>-->
+<!--    </p>-->
 
-    <br>
+<!--    <br>-->
 
-    <input type="submit" value="Create User"/>
-</form>
-</body>
-</html>
+<!--    <input type="submit" value="Create User"/>-->
+<!--</form>-->
+<!--</body>-->
+<!--</html>-->
