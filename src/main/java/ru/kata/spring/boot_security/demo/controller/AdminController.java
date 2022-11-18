@@ -9,7 +9,6 @@ import ru.kata.spring.boot_security.demo.model.User;
 import ru.kata.spring.boot_security.demo.service.RoleService;
 import ru.kata.spring.boot_security.demo.service.UserService;
 
-import java.util.List;
 
 @Controller
 @RequestMapping("/admin")
@@ -25,8 +24,7 @@ public class AdminController {
 
     @GetMapping()
     public String getAllUsers(Model model, @AuthenticationPrincipal User user) {
-        List<User> users = userService.allUsers();
-        model.addAttribute("userList", users);
+        model.addAttribute("userList", userService.allUsers());
         model.addAttribute("roleList", roleService.allRoles());
         model.addAttribute("newUser", new User());
         model.addAttribute("userRole", userService.findByUsername(user.getUsername()));
@@ -40,9 +38,7 @@ public class AdminController {
     }
 
     @PutMapping("/update/{id}")
-    public String updateUser(@ModelAttribute("user") User user, @PathVariable("id") Long id, Model model) {
-        model.addAttribute("user", userService.getById(id));
-        model.addAttribute("roleList", roleService.allRoles());
+    public String updateUser(@ModelAttribute("user") User user) {
         userService.update(user);
         return "redirect:/admin";
     }
