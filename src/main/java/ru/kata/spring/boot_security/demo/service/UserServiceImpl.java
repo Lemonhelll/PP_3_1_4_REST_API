@@ -25,7 +25,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
     @Override
     @Transactional(readOnly = true)
-    public List<User> allUsers() {
+    public List<User> getAllUsers() {
         return userRepository.findAll();
     }
 
