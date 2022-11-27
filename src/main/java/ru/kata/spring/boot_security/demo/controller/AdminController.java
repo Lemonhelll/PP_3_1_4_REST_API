@@ -24,11 +24,13 @@ public class AdminController {
     }
 
     @GetMapping("/admin")
-    public String getAdminPanel(Model model, @AuthenticationPrincipal User user) {
+    public String getAdminPanel(Model model, Principal principal, @AuthenticationPrincipal User user) {
+        Long id = userService.findByUsername(principal.getName()).getId();
         model.addAttribute("userList", userService.getAllUsers());
         model.addAttribute("roleList", roleService.getAllRoles());
         model.addAttribute("newUser", new User());
         model.addAttribute("userRole", userService.findByUsername(user.getUsername()));
+        model.addAttribute("user", userService.getById(id));
         return "adminPanel";
     }
 
@@ -55,20 +57,5 @@ public class AdminController {
         userService.delete(id);
         return "redirect:/admin";
     }
-
-//    @GetMapping("/create")
-//    public String getFormForCreateUser(Model model) {
-//        model.addAttribute("user", new User());
-//        model.addAttribute("roleList", roleService.allRoles());
-//        return "create-user";
-//    }
-
-
-//    @GetMapping("/update/{id}")
-//    public String getFormForUpdateUSer(@PathVariable("id") Long id, Model model) {
-//        model.addAttribute("user", userService.getById(id));
-//        model.addAttribute("roleList", roleService.allRoles());
-//        return "user-update";
-//    }
 
 }

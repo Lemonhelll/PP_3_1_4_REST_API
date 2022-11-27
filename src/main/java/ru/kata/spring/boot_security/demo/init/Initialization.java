@@ -5,6 +5,7 @@ import ru.kata.spring.boot_security.demo.model.Role;
 import ru.kata.spring.boot_security.demo.model.User;
 import ru.kata.spring.boot_security.demo.service.RoleService;
 import ru.kata.spring.boot_security.demo.service.UserService;
+
 import javax.annotation.PostConstruct;
 import java.util.HashSet;
 import java.util.Set;
@@ -23,8 +24,8 @@ public class Initialization {
     private void initUser() {
         Role roleAdmin = new Role("ROLE_ADMIN");
         Role roleUser = new Role("ROLE_USER");
-        roleService.addRole(roleAdmin);
         roleService.addRole(roleUser);
+        roleService.addRole(roleAdmin);
 
         Set<Role> adminSet = new HashSet<>();
         Set<Role> userSet = new HashSet<>();
